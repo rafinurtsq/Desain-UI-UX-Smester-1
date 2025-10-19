@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  width: 100%;
+  background-color: rgb(0, 108, 203);
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header input {
+  width: 260px;
+  margin: 0 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-container {
+  margin-top: 100px;
+  display: flex;
+  align-items: start;
+  padding: 20px;
+}
+
+.product-container h3 {
+  color: #878787;
+}
+
+.product-details {
+  margin-left: 20px;
+}
+
+.product-details h1 {
+  margin-bottom: 2px;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating img {
+  margin-right: 5px;
+}
+
+.size-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.size-options button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.order-box {
+  width: 300px; 
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+.order-box p {
+  text-align: center;
+}
+
+.order-box input {
+  width: 60px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order-now {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(0, 108, 203);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-cart {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-container {
+  margin-top: 100px;
+  display: flex;
+  align-items: stretch;
+  
+  justify-content: space-between;
+  padding: 20px;
+  gap: 30px; /* jarak antar elemen */
+}
+
+.product-description {
+  flex: 2;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgb(0, 108, 203);
+  color: #ffffff;
+  
+  max-width: 400px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-description h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.product-description p {
+  font-size: large;
+}
+
+.product-details {
+  flex: 1;
+  margin-left: 20px;
+}
