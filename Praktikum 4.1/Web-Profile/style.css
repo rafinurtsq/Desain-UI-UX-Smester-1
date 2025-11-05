@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #079d9d;
+}
+
+.container {
+    background-color: #fff;
+    width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #008b8b;
+    padding-bottom: 15px;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+header h1 {
+    color: #006666;
+    margin-bottom: 10px;
+}
+
+.biodata p {
+    margin: 4px 0;
+}
+
+.description {
+    margin-top: 25px;
+}
+
+.description p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.media {
+    margin-top: 30px;
+}
+
+.media h2 {
+    color: #006666;
+    border-left: 6px solid #00a5a5;
+    padding-left: 10px;
+}
+
+.gallery {
+    display: flex;           
+    gap: 10px;                
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 180px;
+    height: 230px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #00a5a5;
+    
+}
+
+.attachments {
+    margin-top: 30px;
+}
+
+.attachments a {
+    display: block;
+    color: #0077cc;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.attachments a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 820px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        margin-bottom: 15px;
+    }
+
+    video {
+        width: 100%;
+    }
+}
