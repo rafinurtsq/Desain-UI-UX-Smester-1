@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS Praktikum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper"> 
+        <main class="container"> 
+            <h1>Form Daftar Seminar TA</h1> 
+            <p class="lead">Silakan isi data dengan lengkap. Tanda <span class="required">*</span> wajib diisi.</p>
+    
+            <form id="praktikumForm1" class="form-grid1" novalidate>
+
+                
+                <div class="form-group nim">
+                    <label for="nim">NIM :<span class="required">*</span></label>
+                    <input type="text" id="nim" name="nim"  placeholder="Contoh: 01102200" pattern="\d{4,}" required>
+                </div>
+                
+                <div class="form-group name">
+                    <label for="fullname">Nama Lengkap :<span class="required">*</span></label> 
+                    <input type="text" id="fullname" name="fullname" placeholder="Silahkan isi Nama Lengkap" required
+                    minlength="3">
+                </div>
+
+                
+                <div class="form-group full program">
+                    <label for="prodi">Prodi : <span class="required">*</span></label>
+                    <select id="prodi" name="prodi" required>
+                        <option value="TI">Teknik Informatika</option>
+                        <option value="SI">Sistem Informasi</option>
+                        <option value="BD">Bisnis Digital</option>
+                    </select>
+                </div>
+                
+                <div class="form-group tanggal">
+                    <label for="tanggal">Tanggal Seminar :</label>
+                    <input type="date" id="tanggal" name="tanggal">
+                </div>
+                
+                <!-- Input Email -->
+                <div class="form-group waktu">
+                    <label for="waktu">Jam Seminar :<span class="required">*</span></label>
+                    <input type="waktu" id="waktu" name="waktu" required>
+                </div>
+                
+                <div class="form-group ruangan">
+                    <label for="ruangan">Ruangan  :<span class="required">*</span></label>
+                    <input type="ruangan" id="ruangan" name="ruangan" required>
+                </div>
+            </form>   
+            <form id="praktikumForm2" class="form-grid2" novalidate>
+                <!-- Textarea Judul TA -->
+                <div class="form-group judul-ta">
+                    <label for="judul">Judul TA :</label>
+                    <textarea id="judul" name="judul" rows="4" placeholder="Tuliskan judul"></textarea>
+                </div>
+
+                <!-- Dropdown Program Praktikum -->
+                <div class="form-group seminar">
+                    <label for="seminar">Seminar : <span class="required">*</span></label>
+                    <select id="seminar" name="seminar" required>
+                        <option value="Proposal">Proposal </option>
+                        <option value="TI">Teknik Informatika</option>
+                        <option value="SI">Sistem Informasi</option>
+                        <option value="BD">Bisnis Digital</option>
+                    </select>
+
+                <!-- Dropdown Program Praktikum -->
+                <div class="form-group pembimbing">
+                    <label for="pembimbing">Pembimbing : <span class="required">*</span></label>
+                    <select id="program" name="program" required>
+                        <option value="Srj">Sirojul Munir S.Si, M.KOM </option>
+                        <option value="Jkw">Ir. Jokowi Dodo</option>
+                        <option value="Bh">Bahlil Lahadalia S.MP</option>
+                    </select>
+                <!-- Dropdown Program Praktikum -->
+                <div class="form-group penguji 1">
+                    <label for="penguji1">Penguji 1 : <span class="required">*</span></label>
+                    <select id="penguji1" name="penguji1" required>
+                        <option value="Srj">Ahmad Rio  M.SI </option>
+                        <option value="Jkw">Ir. Jokowi Dodo</option>
+                        <option value="Bh">Bahlil Lahadalia S.MP</option>
+                    </select>
+
+                <!-- Dropdown Program Praktikum -->
+                <div class="form-group penguji 2">
+                    <label for="penguji2">Penguji 2 : <span class="required">*</span></label>
+                    <select id="penguji2" name="penguji2" required>
+                        <option value="Srj">Amalia Rahmah M.T </option>
+                        <option value="Jkw">Ir. Jokowi Dodo</option>
+                        <option value="Bh">Bahlil Lahadalia S.MP</option>
+                    </select>
+
+                </form>   
+                
+                <div class="form-actions full">
+                    <button type="submit" class="btn secondary">Daftar</button>
+                </div>
+
+            
+        </main>
+    </div>
+</body>
+</html>

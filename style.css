@@ -1,0 +1,225 @@
+/* Reset dan Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Kontainer Utama */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border: 2px solid #000; /* Border tebal hitam seperti sketsa */
+    padding: 20px;
+    width: 100%;
+    max-width: 900px; 
+}
+
+/* Judul */
+h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Menyembunyikan elemen yang tidak ada di sketsa */
+.lead, .required {
+    display: none;
+}
+
+/* --- Struktur Grid Formulir Utama (Formulir Kiri dan Kanan) --- */
+
+/* Form grid yang menampung kedua form */
+main.container {
+    display: grid;
+    /* Membuat 3 area: Judul, Area Kiri (Form 1), Area Kanan (Form 2) */
+    grid-template-columns: 1fr 1fr; /* 2 kolom utama */
+    grid-template-rows: auto auto auto;
+    gap: 10px 20px; /* Jarak antara kolom dan baris */
+}
+
+h1 {
+    grid-column: 1 / span 2; /* Judul membentang di 2 kolom */
+    grid-row: 1;
+}
+
+/* Kontainer Form Kiri (Form 1: NIM sampai Ruangan) */
+#praktikumForm1 {
+    grid-column: 1; /* Di kolom kiri */
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Label (auto) dan Input (1fr) */
+    gap: 10px 5px;
+    align-items: start; /* biarkan teks mulai dari atas dan mentok ke kiri */
+}
+
+/* Pastikan label dan isi form di kiri */
+#praktikumForm1 .form-group label {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 5px;
+    justify-self: start;
+}
+
+/* Kontainer Form Kanan (Form 2: Judul TA sampai Penguji 2 + Tombol Daftar) */
+#praktikumForm2 {
+    grid-column: 2; /* Di kolom kanan */
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Label (auto) dan Input (1fr) */
+    gap: 10px 5px;
+    align-items: center;
+}
+
+/* Pengaturan Umum Form Group */
+.form-group {
+    display: contents; /* Biarkan child elements ditempatkan oleh grid utama */
+}
+
+.form-group label {
+    font-weight: normal; 
+    text-align: right; 
+    padding-right: 5px;
+}
+
+/* Gaya Input, Select, dan Textarea */
+input[type="text"],
+input[type="date"],
+input[type="waktu"], /* Menggunakan 'waktu' sesuai HTML Anda, lebih baik 'time' */
+input[type="ruangan"], /* Menggunakan 'ruangan' sesuai HTML Anda, lebih baik 'text' */
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #000;
+    font-size: 1em;
+    height: 30px; 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Textarea Judul TA */
+.judul-ta textarea {
+    height: 100px; 
+    resize: none;
+    grid-column: 2;
+}
+.judul-ta label {
+    align-self: flex-start; /* Label di atas textarea */
+    padding-top: 5px;
+}
+
+/* Mengatur tinggi input di form kiri agar sejajar dengan tinggi textarea di kanan */
+#praktikumForm1 .form-group:nth-child(1) input,
+#praktikumForm1 .form-group:nth-child(2) input {
+    height: 30px; /* Tinggi baris 1 & 2 di kiri */
+}
+
+/* Penempatan khusus textarea di kanan agar sejajar dengan NIM/Nama di kiri */
+.judul-ta {
+    /* Judul TA akan menempati 3 baris di form kanan (agar tingginya kurang lebih setara 3 baris di kiri: NIM, Nama, Prodi) */
+    grid-row: 1 / span 3;
+}
+.judul-ta textarea {
+    grid-row: 1;
+}
+.judul-ta label {
+    grid-row: 1;
+}
+
+
+/* Simulasi Ikon Kalender pada input Tanggal */
+.tanggal {
+    position: relative;
+}
+
+.tanggal input[type="date"] {
+    padding-right: 35px; 
+}
+.tanggal::after {
+    content: "📅"; /* Simulasi ikon kalender */
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+    font-size: 1em;
+}
+
+/* Simulasi Panah Dropdown */
+select {
+    /* Membuat panah dropdown hitam sederhana */
+    background-image: linear-gradient(45deg, transparent 50%, black 50%),
+                      linear-gradient(135deg, black 50%, transparent 50%);
+    background-position: calc(100% - 15px) center,
+                         calc(100% - 10px) center;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 30px; 
+}
+
+/* Tombol Daftar */
+.form-actions {
+    margin-top: 5px;
+    justify-self: start; /* Rata kiri */
+    
+    /* Tombol Daftar berada di bawah Form Kiri dan Kanan */
+    grid-row: 4; 
+    grid-column: 1;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #f4f4f4;
+    color: #000;
+    border: 1px solid #000;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    width: auto; 
+}
+
+/* Perbaikan penempatan grup di Form 2 setelah Judul TA */
+
+.seminar { grid-row: 4; }
+.pembimbing { grid-row: 5; }
+.penguji1 { grid-row: 6; }
+.penguji2 { grid-row: 7; }
+
+/* Menyesuaikan baris di Form 1 agar sejajar dengan Form 2 */
+/* NIM, Nama, Judul TA (span 3 baris) */
+/* Prodi, Seminar */
+.program { grid-row: 4; }
+/* Tanggal, Pembimbing */
+.tanggal { grid-row: 5; }
+/* Jam, Penguji 1 */
+.waktu { grid-row: 6; }
+/* Ruangan, Penguji 2 */
+.ruangan { grid-row: 7; }
+
+/* Memastikan tombol Daftar tetap di bawah Ruangan */
+.form-actions {
+    grid-row: 8; 
+    grid-column: 1 / span 2;
+    margin-top: 20px;
+}
+
+/* Final adjustments for select/input width in Form 2 */
+#praktikumForm2 select {
+    width: 100%;
+}
+
